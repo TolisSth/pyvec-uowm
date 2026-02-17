@@ -1,3 +1,4 @@
 build/
 env/
-pyvec.so
+*.so
+*.egg-info/

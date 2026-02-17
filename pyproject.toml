@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "pybind11>=2.10"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyvec-uowm"
+version = "1.0.0"
+description = "Linear algebra engine in C++ exposed to python using pybind11"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pybind11>=2.10",
+]
+
+[tool.setuptools]
+packages = [] 
+
+[[tool.setuptools.ext-modules]]
+name = "pyvec"
+sources = ["src/Vector.cpp", "src/bindings.cpp"]
+include-dirs = ["include"] 
+language = "c++"
+extra-compile-args = ["-std=c++20"]
